@@ -190,4 +190,22 @@ myElement.remove();
 
 ---
 
+## Event Listeners
+
+**jQuery**
+```javascript
+$(myElement).on('click', e => { 
+    // ... 
+});
+```
+
+**Modern**
+```javascript
+myElement.addEventListener('click', e => { 
+    // ... 
+});
+```
+
+---
+
 WIP
