@@ -124,6 +124,7 @@ myElement.classList.toggle('foo');
 ---
 
 ## Getting/Setting Attributes & Properties
+properties | attributes | text | html
 
 **jQuery**
 ```javascript
