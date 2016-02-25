@@ -217,9 +217,27 @@ myElement.addEventListener('click', e => {
 $(myMultipleElements).filter('.some-class-here');
 ```
 
-**Modern** | Using native APIs and the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+**Modern**
 ```javascript
-[ ...myMultipleElements ].filter(element => element.classList.contains('some-class-here'));
+Array.from(...myMultipleElements).filter(element => element.classList.contains('some-class-here'));
+```
+
+---
+
+## Each element
+
+**jQuery**
+```javascript
+$(myMultipleElements).each((i, element) => {
+    // ...
+});
+```
+
+**Modern**
+```javascript
+Array.from(myMultipleElements).forEach((element, i) => {
+    // ...
+});
 ```
 
 ---
