@@ -221,7 +221,7 @@ $(myMultipleElements).filter('.some-class-here');
 
 **Modern**
 ```javascript
-Array.from(...myMultipleElements).filter(element => element.classList.contains('some-class-here'));
+Array.from(myMultipleElements).filter(element => element.classList.contains('some-class-here'));
 ```
 
 ---
