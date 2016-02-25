@@ -94,7 +94,7 @@ via CSS selectors
 
 **jQuery**
 ```javascript
-const $myElement = $('.some-class-name-here > .another-class');
+const myElement = $('.some-class-name-here > .another-class');
 ```
 
 **Modern** | Using [querySelector|All](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
