@@ -210,7 +210,7 @@ myElement.addEventListener('click', e => {
 
 ---
 
-## Filter elements
+## Filter Elements
 
 **jQuery**
 ```javascript
@@ -224,7 +224,7 @@ Array.from(...myMultipleElements).filter(element => element.classList.contains('
 
 ---
 
-## Each element
+## Each Element
 
 **jQuery**
 ```javascript
