@@ -133,7 +133,7 @@ $(myElement).text('lorem ispum');
 $(myElement).html('<span>lorem ipsum</span>');
 ```
 
-**Modern**
+**Modern** | Using native properties & the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 ```javascript
 myElement.id = 'foo';
 myElement.dataset.foo = 'bar';
