@@ -2,6 +2,8 @@
 
 "You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples. 
 
+**10 years after jQuery's initial release, the browser landscape has drastically changed.**
+
 I'm not telling you to avoid using libraries, but I want you to be aware of the (new) native APIs that are available to you that, in some cases, are easier and more intuitive than those that jQuery (and others) have to offer.
 
 ---
@@ -10,7 +12,7 @@ I'm not telling you to avoid using libraries, but I want you to be aware of the 
 
 [...] Some developers believe that jQuery is protecting us from a great demon of browser incompatibility when, in truth, [modern] browsers are pretty easy to deal with on their own.
 
-**- youmightnotneedjquery.com**
+**- YouMightNotNeedjQuery.com**
 
 ---
 
