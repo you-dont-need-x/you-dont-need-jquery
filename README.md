@@ -286,4 +286,20 @@ const siblings = Array.from(myElement.parentNode.childNodes).filter(element => e
 
 ---
 
+## Next & Previous Sibling
+
+**jQuery**
+```javascript
+const next = $(myElement).next();
+const prev = $(myElement).prev();
+```
+
+**Modern**
+```javascript
+const next = myElement.nextSiblingElement;
+const prev = myElement.previousSiblingElement;
+```
+
+---
+
 WIP
