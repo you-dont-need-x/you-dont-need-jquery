@@ -244,4 +244,46 @@ Array.from(myMultipleElements).forEach((element, i) => {
 
 ---
 
+## Parent Element
+
+**jQuery**
+```javascript
+const parent = $(myElement).parent();
+```
+
+**Modern**
+```javascript
+const parent = myElement.parentNode;
+```
+
+---
+
+## Children
+
+**jQuery**
+```javascript
+const children = $(myElement).children();
+```
+
+**Modern**
+```javascript
+const children = myElement.childNodes;
+```
+
+---
+
+## Siblings
+
+**jQuery**
+```javascript
+const siblings = $(myElement).siblings();
+```
+
+**Modern**
+```javascript
+const siblings = Array.from(myElement.parentNode.childNodes).filter(element => element !== myElement);
+```
+
+---
+
 WIP
