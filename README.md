@@ -1,6 +1,8 @@
 # It's 2016; Things Have Changed
 
-"You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples. I'm not telling you to avoid using libraries, but I want you to be aware of the (new) native APIs that are available to you that, in some cases, are easier and more untuitive than those that jQuery (and others) have to offer.
+"You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples. 
+
+I'm not telling you to avoid using libraries, but I want you to be aware of the (new) native APIs that are available to you that, in some cases, are easier and more intuitive than those that jQuery (and others) have to offer.
 
 ---
 
@@ -204,6 +206,20 @@ $(myElement).on('click', e => {
 myElement.addEventListener('click', e => { 
     // ... 
 });
+```
+
+---
+
+## Filter elements
+
+**jQuery**
+```javascript
+$(myMultipleElements).filter('.some-class-here');
+```
+
+**Modern** | Using native APIs and the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+```javascript
+[ ...myMultipleElements ].filter(element => element.classList.contains('some-class-here'));
 ```
 
 ---
