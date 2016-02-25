@@ -296,8 +296,8 @@ const prev = $(myElement).prev();
 
 **Modern**
 ```javascript
-const next = myElement.nextSiblingElement;
-const prev = myElement.previousSiblingElement;
+const next = myElement.nextElementSibling;
+const prev = myElement.previousElementSibling;
 ```
 
 ---
