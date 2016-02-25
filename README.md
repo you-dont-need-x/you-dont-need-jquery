@@ -126,20 +126,28 @@ myElement.classList.toggle('foo');
 ---
 
 ## Getting/Setting Attributes & Properties
-properties | attributes | text | html
+attributes | properties | text | html
 
 **jQuery**
 ```javascript
+const foo = $(myElement).attr('foo');
+$(myElement).attr('bar', foo);
+
 $(myElement).prop('id', 'foo');
 $(myElement).attr('data-foo', 'bar');
+
 $(myElement).text('lorem ispum');
 $(myElement).html('<span>lorem ipsum</span>');
 ```
 
 **Modern** | Using native properties & the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 ```javascript
+const foo = myElement.getAttribute('foo');
+myElement.setAttribute('bar', foo);
+
 myElement.id = 'foo';
 myElement.dataset.foo = 'bar';
+
 myElement.textContent = 'lorem ipsum';
 myElement.innerHTML = '<span>lorem ipsum</span>';
 ```
