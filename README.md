@@ -20,6 +20,40 @@ Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.o
 
 ---
 
+## Querying the DOM
+via CSS selectors
+
+**jQuery**
+```javascript
+const $myElement = $('.some-class-name-here > .another-class');
+```
+
+**Modern** | Using [querySelector(All)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+```javascript
+const myElement = document.querySelector(''.some-class-name-here > .another-class');
+```
+
+---
+
+## Element's Class
+add|remove|toggle
+
+**jQuery**
+``` javascript
+$(myElement).addClass('foo');
+$(myElement).removeClass('foo');
+$(myElement.toggleClass('foo');
+```
+
+**Modern** | Using the [classList API](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+```javascript
+myElement.classList.add('foo');
+myElement.classList.remove('foo');
+myElement.classList.toggle('foo');
+```
+
+---
+
 ## AJAX GET
 
 **jQuery**
