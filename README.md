@@ -304,4 +304,20 @@ const prev = myElement.previousElementSibling;
 
 ---
 
+## Hide & Show Element
+
+**jQuery**
+```javascript
+$(myElement).hide();
+$(myElement).show();
+```
+
+**Modern**
+```javascript
+myElement.style.display = 'none';
+myElement.style.display = null;
+```
+
+---
+
 WIP
