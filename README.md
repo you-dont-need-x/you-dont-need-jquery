@@ -28,15 +28,15 @@ via CSS selectors
 const $myElement = $('.some-class-name-here > .another-class');
 ```
 
-**Modern** | Using [querySelector(All)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+**Modern** | Using [querySelector|All](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 ```javascript
-const myElement = document.querySelector(''.some-class-name-here > .another-class');
+const myElement = document.querySelector('.some-class-name-here > .another-class');
 ```
 
 ---
 
 ## Element's Class
-add|remove|toggle
+add | remove | toggle
 
 **jQuery**
 ``` javascript
