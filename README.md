@@ -113,7 +113,7 @@ add | remove | toggle
 ```javascript
 $(myElement).addClass('foo');
 $(myElement).removeClass('foo');
-$(myElement.toggleClass('foo');
+$(myElement).toggleClass('foo');
 ```
 
 **Modern** | Using the [classList API](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
