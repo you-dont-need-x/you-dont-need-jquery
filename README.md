@@ -125,33 +125,69 @@ myElement.classList.toggle('foo');
 
 ---
 
-## Getting/Setting Attributes & Properties
-attributes | properties | text | html
+## Getting/Setting Attributes
 
 **jQuery**
 ```javascript
 const foo = $(myElement).attr('foo');
 $(myElement).attr('bar', foo);
+```
 
-$(myElement).prop('id', 'foo');
-$(myElement).attr('data-foo', 'bar');
+**Modern**
+```javascript
+const foo = myElement.getAttribute('foo');
+myElement.setAttribute('bar', foo);
+```
 
+---
+
+## Setting Text & HTML
+
+**jQuery**
+```javascript
 $(myElement).text('lorem ispum');
 $(myElement).html('<span>lorem ipsum</span>');
 ```
 
-**Modern** | Using native properties & the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
+**Modern** | Using native properties
 ```javascript
-const foo = myElement.getAttribute('foo');
-myElement.setAttribute('bar', foo);
-
-myElement.id = 'foo';
-myElement.dataset.foo = 'bar';
-
 myElement.textContent = 'lorem ipsum';
 myElement.innerHTML = '<span>lorem ipsum</span>';
 ```
 
 ---
 
-WORK IN PROGRESS
+## Data Attributes
+
+**jQuery**
+```javascript
+$(myElement).attr('data-foo', 'bar');
+```
+
+**Modern** | Using the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
+```javascript
+myElement.dataset.foo = 'bar';
+```
+
+---
+
+## Append Child & Remove Element
+append | prepend | remove
+
+**jQuery**
+```javascript
+$(myElement).append(anotherElement);
+$(myElement).prepend(anotherElement);
+$(myElement).remove();
+```
+
+**Modern**
+```javascript
+myElement.appendChild(anotherElement);
+myElement.insertBefore(anotherElement, myElement.firstChild);
+myElement.remove();
+```
+
+---
+
+WIP
