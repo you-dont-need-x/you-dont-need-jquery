@@ -98,13 +98,14 @@ via CSS selectors
 
 **jQuery**
 ```javascript
-const myElement = $('.some-class-name-here > .another-class');
+const myElement = $('.foo');
 ```
 
 **Modern** | Using [querySelector|All](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 ```javascript
-const myElement = document.querySelector('.some-class-name-here > .another-class'); // returns a single element
-const myMultipleElements = document.querySelectorAll('.foo'); // returns a NodeList of matched elements
+const myElement = document.querySelector('.foo');
+// or
+const myMultipleElements = document.querySelectorAll('.foo');
 ```
 
 ---
