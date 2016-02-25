@@ -1,4 +1,6 @@
-"You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples.
+# It's 2016; Things Have Changed
+
+"You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples. I'm not telling you to avoid using libraries, but I want you to be aware of the (new) native APIs that are available to you that, in some cases, are easier and more untuitive than those that jQuery (and others) have to offer.
 
 ---
 
