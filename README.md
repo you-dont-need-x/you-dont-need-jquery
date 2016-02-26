@@ -211,7 +211,7 @@ $(myElement).css({ background: 'red', color: 'white' });
 ```javascript
 myElement.style.background = 'red';
 myElement.style.color = 'white';
-```;
+```
 
 ---
 
