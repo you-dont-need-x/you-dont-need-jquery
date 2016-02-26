@@ -4,22 +4,20 @@
 
 **10 years after jQuery's initial release, the browser landscape has drastically changed.**
 
-I'm not telling you to avoid using libraries, but I want you to be aware of the (new) native APIs that are available to you that, in some cases, are easier and more intuitive than those that jQuery (and others) have to offer.
+The purpose of this is not to tell you that you shouldn't use jQuery, but rather to re-educate you on what exactly jQuery is useful for. The DOM, and other browser APIs, have been much better standardized, and many of the previous pitfalls of compatability no longer exist. While jQuery is still useful, it is less so than before, and it's important for you--the developer--to be familiar with the underlying APIs that libraries are abstracting.
+
+A lot of the new APIs and methodologies are much easier to understand, and are sometimes more coherent than those in libraries like jQuery.
 
 ---
 
-[...] Please take a moment to consider if you actually need jQuery as a dependency; maybe you can include a few lines of utility code, and forgo the requirement. If you're only targeting more modern browsers, you might not need anything more than what the browser ships with.
+*[...]* Please take a moment to consider if you actually need jQuery as a dependency; maybe you can include a few lines of utility code, and forgo the requirement. If you're only targeting more modern browsers, you might not need anything more than what the browser ships with.
 
-[...] Some developers believe that jQuery is protecting us from a great demon of browser incompatibility when, in truth, [modern] browsers are pretty easy to deal with on their own.
+*[...]* Some developers believe that jQuery is protecting us from a great demon of browser incompatibility when, in truth, *[modern]* browsers are pretty easy to deal with on their own.
 
 **- YouMightNotNeedjQuery.com**
 
 ---
 
-# Modern Browsers
-Browsers today are nothing like their legacy counter-parts. The "big three"--being Chrome, Firefox, and Edge--are what we call, "evergreen", meaning that they self-regulate updates, giving you the most updated engines available. "**You Don't Need jQuery**" only focuses on these modern, evergreen browsers. If you need to support more legacy browsers, like IE, try reading [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery) instead.
-
----
 # You Don't Need jQuery
 
 Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that if the browser is modern, and supports the APIs, it will use those, but if the browser is legacy, it will update the APIs with the new features, and allow all browsers to work.
