@@ -22,7 +22,7 @@ Browsers today are nothing like their legacy counter-parts. The "big three"--bei
 ---
 # You Don't Need jQuery
 
-Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that you can recreate these features once, and then use all over your code. However, there are some syntax features (like async/await) that I use that will have to be "transpiled", using something like [Babel](https://babeljs.io/)
+Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that you can recreate these features once, and then use all over your code.
 
 ---
 
@@ -41,18 +41,16 @@ $.ajax({
 });
 ```
 
-**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [async/await](http://tc39.github.io/ecmascript-asyncawait/)
+**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 ```javascript
-(async () => {
-    try {
-        const request = await fetch('path/to/json');
-        const data = await request.json();
-        // ...
-    }
-    catch (e) {
-        // ...
-    }
-})();
+fetch('/path/to/json')
+.then(response => response.json())
+.then(data => {
+    // ...
+})
+.catch(error => {
+    // ...
+});
 ```
 
 ---
@@ -75,22 +73,20 @@ $.ajax({
 });
 ```
 
-**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [async/await](http://tc39.github.io/ecmascript-asyncawait/)
+**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 ```javascript
-(async () => {
-    try {
-        const request = await fetch('path/to/whatever', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(myObjectHere)
-        });
-        const data = await request.json();
-        // ...
-    }
-    catch (e) {
-        // ...
-    }
-})();
+fetch('path/to/whatever', {
+    method: 'POST',
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(myObjectHere)
+})
+.then(response => response.json())
+.then(data => {
+    // ...
+})
+.catch(error => {
+    // ...
+});
 ```
 
 ---
