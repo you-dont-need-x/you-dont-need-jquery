@@ -386,4 +386,4 @@ myElement.style.display = null;
 
 ---
 
-WIP
+**This repo of knowledge is a work in progress; if you'd like to contribute, please submit an issue or a pull request.**
