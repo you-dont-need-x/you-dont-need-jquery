@@ -22,7 +22,14 @@ Browsers today are nothing like their legacy counter-parts. The "big three"--bei
 ---
 # You Don't Need jQuery
 
-Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that you can recreate these features once, and then use all over your code.
+Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that if the browser is modern, and supports the APIs, it will use those, but if the browser is legacy, it will update the APIs with the new features, and allow all browsers to work.
+
+**Modern features that can be polyfilled for legacy browsers:**
+- Promise
+- fetch
+- classList
+- Array.from
+- More...
 
 ---
 
@@ -164,7 +171,7 @@ myElement.innerHTML = '<span>lorem ipsum</span>';
 
 **jQuery**
 ```javascript
-$(myElement).attr('data-foo', 'bar');
+$(myElement).data('foo', 'bar');
 ```
 
 **Modern** | Using the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
@@ -252,7 +259,7 @@ const parent = $(myElement).parent();
 
 **Modern**
 ```javascript
-const parent = myElement.parentNode;
+const parent = myElement.parentElement;
 ```
 
 ---
@@ -266,7 +273,7 @@ const children = $(myElement).children();
 
 **Modern**
 ```javascript
-const children = myElement.childNodes;
+const children = myElement.children;
 ```
 
 ---
@@ -280,7 +287,7 @@ const siblings = $(myElement).siblings();
 
 **Modern**
 ```javascript
-const siblings = Array.from(myElement.parentNode.childNodes).filter(element => element !== myElement);
+const siblings = Array.from(myElement.parentElement.children).filter(element => element !== myElement);
 ```
 
 ---
