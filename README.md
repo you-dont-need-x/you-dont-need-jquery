@@ -268,16 +268,14 @@ from single | from multiple
 
 **jQuery**
 ```javascript
-const x = $(myElement).find('.some-class-here');
-const y = $(myMultipleElements).find('.some-class-here');
+const x = $(myElement).find('.foo');
+const y = $(myMultipleElements).find('.foo');
 ```
 
 **Modern**
 ```javascript
-const x = myElement.querySelectorAll('.some-class-here');
-Array.from(myMultipleElements).forEach(x => Array.from(x.querySelectorAll('.some-class-here')).forEach(y => {
-    // use 'y' here
-}));
+const x = myElement.querySelectorAll('.foo');
+const y = Array.from(myMultipleElements).map(x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
 ```
 
 ---
