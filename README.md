@@ -323,9 +323,7 @@ const x = $(myMultipleElements).parents();
 
 **Modern**
 ```javascript
-Array.from(myMultipleElements).map(x => x.parentElement).forEach(x => {
-     // use 'x' here
-});
+const parents = Array.from(myMultipleElements).map(x => x.parentElement);
 ```
 
 ---
