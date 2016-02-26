@@ -227,7 +227,26 @@ $(myMultipleElements).filter('.some-class-here');
 
 **Modern**
 ```javascript
-Array.from(myMultipleElements).filter(element => element.classList.contains('some-class-here'));
+Array.from(myMultipleElements).filter(x => x.classList.contains('some-class-here'));
+```
+
+---
+
+## Find Elements
+from single | from multiple
+
+**jQuery**
+```javascript
+const x = $(myElement).find('.some-class-here');
+const y = $(myMultipleElements).find('.some-class-here');
+```
+
+**Modern**
+```javascript
+const x = myElement.querySelectorAll('.some-class-here');
+Array.from(myMultipleElements).forEach(x => x.querySelectorAll('.some-class-here').forEach(y => {
+    // use 'y' here
+}));
 ```
 
 ---
@@ -236,14 +255,14 @@ Array.from(myMultipleElements).filter(element => element.classList.contains('som
 
 **jQuery**
 ```javascript
-$(myMultipleElements).each((i, element) => {
+$(myMultipleElements).each((i, x) => {
     // ...
 });
 ```
 
 **Modern**
 ```javascript
-Array.from(myMultipleElements).forEach((element, i) => {
+Array.from(myMultipleElements).forEach((x, i) => {
     // ...
 });
 ```
@@ -287,7 +306,7 @@ const siblings = $(myElement).siblings();
 
 **Modern**
 ```javascript
-const siblings = Array.from(myElement.parentElement.children).filter(element => element !== myElement);
+const siblings = Array.from(myElement.parentElement.children).filter(x => x !== myElement);
 ```
 
 ---
