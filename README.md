@@ -31,6 +31,8 @@ Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.o
 - Array.from
 - More...
 
+Although a couple of the modern examples have more characters in their code, they should not deter you from trying to understand these new APIs. Read carefully, and try to understand what the code is doing so that you can better reflect on whether or not you should use a library.
+
 ---
 
 ## AJAX GET
@@ -40,10 +42,10 @@ Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.o
 $.ajax({
     url: 'path/to/json',
     success: data => {
-        // ...
+        // use 'data' here
     },
     error: error => {
-        // ...
+        // use 'error' here
     }
 });
 ```
@@ -53,10 +55,10 @@ $.ajax({
 fetch('/path/to/json')
 .then(response => response.json())
 .then(data => {
-    // ...
+    // use 'data' here
 })
 .catch(error => {
-    // ...
+    // use 'error' here
 });
 ```
 
@@ -72,10 +74,10 @@ $.ajax({
     contentType: 'application/json',
     data: JSON.stringify(myObjectHere),
     success: data => {
-        // ...
+        // use 'data' here
     },
     error: error => {
-        // ...
+        // use 'error' here
     }
 });
 ```
@@ -89,10 +91,10 @@ fetch('path/to/whatever', {
 })
 .then(response => response.json())
 .then(data => {
-    // ...
+    // use 'data' here
 })
 .catch(error => {
-    // ...
+    // use 'error' here
 });
 ```
 
@@ -134,7 +136,7 @@ myElement.classList.toggle('foo');
 
 ---
 
-## Getting/Setting Attributes
+## Attributes
 get | set
 
 **jQuery**
@@ -151,7 +153,24 @@ myElement.setAttribute('bar', foo);
 
 ---
 
-## Setting Text & HTML
+## Input's Value
+get | set
+
+**jQuery**
+```javascript
+const value = $(myElement).val();
+$(myElement).val('foo');
+```
+
+**Modern**
+```javascript
+const value = myElement.value;
+myElement.value = 'foo';
+```
+
+---
+
+## Text & HTML
 
 **jQuery**
 ```javascript
@@ -181,6 +200,21 @@ myElement.dataset.foo = 'bar';
 
 ---
 
+## Element Styles
+
+**jQuery**
+```javascript
+$(myElement).css({ background: 'red', color: 'white' });
+```
+
+**Modern**
+```javascript
+myElement.style.background = 'red';
+myElement.style.color = 'white';
+```;
+
+---
+
 ## Append Child & Remove Element
 append | prepend | remove
 
@@ -201,19 +235,18 @@ myElement.remove();
 ---
 
 ## Event Listeners
+add | remove
 
 **jQuery**
 ```javascript
-$(myElement).on('click', e => { 
-    // ... 
-});
+$(myElement).on('click', myEventHandler);
+$(myElement).off('click', myEventHandler);
 ```
 
 **Modern**
 ```javascript
-myElement.addEventListener('click', e => { 
-    // ... 
-});
+myElement.addEventListener('click', myEventHandler);
+myElement.removeEventListener('click', myEventHandler);
 ```
 
 ---
@@ -244,7 +277,7 @@ const y = $(myMultipleElements).find('.some-class-here');
 **Modern**
 ```javascript
 const x = myElement.querySelectorAll('.some-class-here');
-Array.from(myMultipleElements).forEach(x => x.querySelectorAll('.some-class-here').forEach(y => {
+Array.from(myMultipleElements).forEach(x => Array.from(x.querySelectorAll('.some-class-here')).forEach(y => {
     // use 'y' here
 }));
 ```
@@ -256,14 +289,14 @@ Array.from(myMultipleElements).forEach(x => x.querySelectorAll('.some-class-here
 **jQuery**
 ```javascript
 $(myMultipleElements).each((i, x) => {
-    // ...
+    // use 'x' here
 });
 ```
 
 **Modern**
 ```javascript
 Array.from(myMultipleElements).forEach((x, i) => {
-    // ...
+     // use 'x' here
 });
 ```
 
@@ -279,6 +312,22 @@ const parent = $(myElement).parent();
 **Modern**
 ```javascript
 const parent = myElement.parentElement;
+```
+
+---
+
+## All Parents
+
+**jQuery**
+```javascript
+const x = $(myMultipleElements).parents();
+```
+
+**Modern**
+```javascript
+Array.from(myMultipleElements).map(x => x.parentElement).forEach(x => {
+     // use 'x' here
+});
 ```
 
 ---
