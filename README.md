@@ -130,6 +130,7 @@ $(myElement).toggleClass('foo');
 myElement.classList.add('foo');
 myElement.classList.remove('foo');
 myElement.classList.toggle('foo');
+myElement.classList.toggle('foo', boolean);
 ```
 
 ---
