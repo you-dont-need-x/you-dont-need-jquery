@@ -27,6 +27,7 @@ Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.o
 - fetch
 - classList
 - Array.from
+- Object.assign
 - More...
 
 Although a couple of the modern examples have more characters in their code, they should not deter you from trying to understand these new APIs. Read carefully, and try to understand what the code is doing so that you can better reflect on whether or not you should use a library.
@@ -318,12 +319,12 @@ const parent = myElement.parentElement;
 
 **jQuery**
 ```javascript
-const x = $(myMultipleElements).parents();
+const x = $(myMultipleElements).parents('.foo');
 ```
 
 **Modern**
 ```javascript
-const parents = Array.from(myMultipleElements).map(x => x.parentElement);
+const parents = Array.from(myMultipleElements).map(x => x.closest('.foo'));
 ```
 
 ---
