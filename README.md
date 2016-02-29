@@ -207,6 +207,8 @@ $(myElement).css({ background: 'red', color: 'white' });
 
 **Modern**
 ```javascript
+Object.assign(myElement.style, { background: 'red', color: 'white' });
+// or
 myElement.style.background = 'red';
 myElement.style.color = 'white';
 ```
