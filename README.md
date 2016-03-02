@@ -36,8 +36,19 @@ Although a couple of the modern examples have more characters in their code, the
 
 ## AJAX GET
 
-**jQuery**
-```javascript
+Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+<table width='100%'>
+    <thead>
+        <tr>
+            <th>jQuery</th>
+            <th>Modern</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <pre lang='javascript'>
 $.ajax({
     url: 'path/to/json',
     success: data => {
@@ -47,10 +58,10 @@ $.ajax({
         // use 'error' here
     }
 });
-```
-
-**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-```javascript
+                </pre>
+            </td>
+            <td>
+                <pre lang='javascript'>
 fetch('/path/to/json')
 .then(response => response.json())
 .then(data => {
@@ -59,7 +70,11 @@ fetch('/path/to/json')
 .catch(error => {
     // use 'error' here
 });
-```
+                </pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ---
 
