@@ -4,7 +4,7 @@
 
 **10 years after jQuery's initial release, the browser landscape has drastically changed.**
 
-The purpose of this is not to tell you that you shouldn't use jQuery, but rather to re-educate you on what exactly jQuery is useful for. The DOM, and other browser APIs, have been much better standardized, and many of the previous pitfalls of compatability no longer exist. While jQuery is still useful, it is less so than before, and it's important for you--the developer--to be familiar with the underlying APIs that libraries are abstracting.
+The purpose of this is not to tell you that you shouldn't use jQuery, but rather to re-educate you on what exactly jQuery is useful for. The DOM, and other browser APIs, have been much better standardized, and many of the previous pitfalls of compatibility no longer exist. While jQuery is still useful, it is less so than before, and it's important for you--the developer--to be familiar with the underlying APIs that libraries are abstracting.
 
 A lot of the new APIs and methodologies are much easier to understand, and are sometimes more coherent than those in libraries like jQuery.
 
