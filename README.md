@@ -404,4 +404,29 @@ myElement.style.display = null;
 
 ---
 
+## Animations
+
+You do not need to use jQuery anymore to animate your website with common animations like 'bouncing', 'fade in' and so on.
+
+Take a look at [Animate.css](https://daneden.github.io/animate.css/) which is an amazing CSS library, where, with the help of "Animate.css" CSS classes being attached to HTML elements, you can animate them.
+
+**jQuery**
+```javascript
+$('selector').animate({...});
+```
+
+**Modern**
+```
+document.getElementById('navbar').className += " bounce";
+```
+
+Or, better yet:
+
+**Modern Alternative**
+```
+<div class="bounce" id="navbar">(...)</div>
+```
+
+---
+
 **This repo of knowledge is a work in progress; if you'd like to contribute, please submit an issue or a pull request.**
