@@ -156,7 +156,9 @@ get | set
 **jQuery**
 ```javascript
 const foo = $(myElement).attr('foo');
+myElement.foo
 $(myElement).attr('bar', foo);
+myElement.bar = foo;
 ```
 
 **Modern**
@@ -227,6 +229,7 @@ Object.assign(myElement.style, { background: 'red', color: 'white' });
 // or
 myElement.style.background = 'red';
 myElement.style.color = 'white';
+Object.assign(myElement.style, {background: 'red', color: 'white'} );
 ```
 
 ---
@@ -325,7 +328,7 @@ const parent = $(myElement).parent();
 
 **Modern**
 ```javascript
-const parent = myElement.parentElement;
+const parent = myElement.parentNode;
 ```
 
 ---
