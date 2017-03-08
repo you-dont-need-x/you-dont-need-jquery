@@ -398,8 +398,8 @@ $(myElement).show();
 
 **Modern**
 ```javascript
-myElement.style.display = 'none';
-myElement.style.display = null;
+myElement.hidden = true;
+myElement.hidden = false;
 ```
 
 ---
