@@ -100,7 +100,7 @@ $.ajax({
 ```javascript
 fetch('path/to/whatever', {
     method: 'POST',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
+    headers: { 'content-type': 'application/json' },
     body: JSON.stringify(myObjectHere)
 })
 .then(response => response.json())
