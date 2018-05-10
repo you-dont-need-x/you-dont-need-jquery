@@ -38,17 +38,8 @@ Although a couple of the modern examples have more characters in their code, the
 
 Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-<table width='100%'>
-    <thead>
-        <tr>
-            <th>jQuery</th>
-            <th>Modern</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <pre lang='javascript'>
+**jQuery**
+```javascript
 $.ajax({
     url: 'path/to/json',
     success: data => {
@@ -58,10 +49,10 @@ $.ajax({
         // use 'error' here
     }
 });
-                </pre>
-            </td>
-            <td>
-                <pre lang='javascript'>
+```
+
+**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+```javascript
 fetch('/path/to/json')
 .then(response => response.json())
 .then(data => {
@@ -70,11 +61,7 @@ fetch('/path/to/json')
 .catch(error => {
     // use 'error' here
 });
-                </pre>
-            </td>
-        </tr>
-    </tbody>
-</table>
+```
 
 ---
 
@@ -290,7 +277,7 @@ const x = $(myElement).find('.foo');
 const y = $(myMultipleElements).find('.foo');
 ```
 
-**Modern**
+**Modern** (This one is probably not a great example...)
 ```javascript
 const x = myElement.querySelectorAll('.foo');
 const y = Array.from(myMultipleElements).map(x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
