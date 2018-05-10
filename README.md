@@ -36,8 +36,6 @@ Although a couple of the modern examples have more characters in their code, the
 
 ## AJAX GET
 
-Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-
 **jQuery**
 ```javascript
 $.ajax({
