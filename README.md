@@ -20,7 +20,7 @@ A lot of the new APIs and methodologies are much easier to understand, and are s
 
 # You Don't Need jQuery
 
-Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill), meaning that if the browser is modern, and supports the APIs, it will use those, but if the browser is legacy, it will update the APIs with the new features, and allow all browsers to work.
+Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill_(programming)), meaning that if the browser is modern, and supports the APIs, it will use those, but if the browser is legacy, it will update the APIs with the new features, and allow all browsers to work.
 
 **Modern features that can be polyfilled for legacy browsers:**
 - Promise
