@@ -49,7 +49,7 @@ $.ajax({
 });
 ```
 
-**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+**Modern** | Using the [fetch API](https://devdocs.io/dom/fetch_api/using_fetch) and [Promises](https://devdocs.io/javascript/global_objects/promise)
 ```javascript
 fetch('/path/to/json')
 .then(response => response.json())
@@ -61,7 +61,7 @@ fetch('/path/to/json')
 });
 ```
 
-**New** | Using [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+**New** | Using [async/await](https://devdocs.io/javascript/statements/async_function)
 ```javascript
 try {
     const response = await fetch('/path/to/json');
@@ -93,7 +93,7 @@ $.ajax({
 });
 ```
 
-**Modern** | Using the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+**Modern** | Using the [fetch API](https://devdocs.io/dom/fetch_api/using_fetch) and [Promises](https://devdocs.io/javascript/global_objects/promise)
 ```javascript
 fetch('path/to/whatever', {
     method: 'POST',
@@ -109,7 +109,7 @@ fetch('path/to/whatever', {
 });
 ```
 
-**New** | Using [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+**New** | Using [async/await](https://devdocs.io/javascript/statements/async_function)
 ```javascript
 try {
     const response = await fetch('/path/to/json', {
@@ -135,7 +135,7 @@ via CSS selectors
 const myElement = $('.foo');
 ```
 
-**Modern** | Using [querySelector|All](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+**Modern** | Using [querySelector](https://devdocs.io/dom/element/queryselector) or [querySelectorAll](https://devdocs.io/dom/element/queryselectorall)
 ```javascript
 const myElement = document.querySelector('.foo');
 // or
@@ -154,7 +154,7 @@ $(myElement).removeClass('foo');
 $(myElement).toggleClass('foo');
 ```
 
-**Modern** | Using the [classList API](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+**Modern** | Using the [classList API](https://devdocs.io/dom/element/classlist)
 ```javascript
 myElement.classList.add('foo');
 myElement.classList.remove('foo');
@@ -203,12 +203,14 @@ myElement.value = 'foo';
 ```javascript
 $(myElement).text('lorem ispum');
 $(myElement).html('<span>lorem ipsum</span>');
+$(myElement).append('<span>foo bar</span>');
 ```
 
-**Modern** | Using native properties
+**Modern** | Using native properties and [insertAdjacentHTML](https://devdocs.io/dom/element/insertadjacenthtml)
 ```javascript
 myElement.textContent = 'lorem ipsum';
 myElement.innerHTML = '<span>lorem ipsum</span>';
+myElement.insertAdjacentHTML('beforeend', '<span>foo bar</span>');
 ```
 
 ---
@@ -220,7 +222,7 @@ myElement.innerHTML = '<span>lorem ipsum</span>';
 $(myElement).data('foo', 'bar');
 ```
 
-**Modern** | Using the [dataset API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
+**Modern** | Using the [dataset API](https://devdocs.io/dom/htmlelement/dataset)
 ```javascript
 myElement.dataset.foo = 'bar';
 ```
@@ -254,10 +256,17 @@ $(myElement).prepend(anotherElement);
 $(myElement).remove();
 ```
 
-**Modern**
+**Modern** Using [remove](https://devdocs.io/dom/childnode/remove)
 ```javascript
 myElement.appendChild(anotherElement);
 myElement.insertBefore(anotherElement, myElement.firstChild);
+myElement.remove();
+```
+
+**New** Using [append](https://devdocs.io/dom/parentnode/append) and [prepend](https://devdocs.io/dom/parentnode/prepend) as well
+```javascript
+myElement.append(anotherElement);
+myElement.prepend(anotherElement);
 myElement.remove();
 ```
 
@@ -272,7 +281,7 @@ $(myElement).on('click', myEventHandler);
 $(myElement).off('click', myEventHandler);
 ```
 
-**Modern**
+**Modern** Using [addEventListener](https://devdocs.io/dom/eventtarget/addeventlistener) and [removeEventListener](https://devdocs.io/dom/eventtarget/removeeventlistener)
 ```javascript
 myElement.addEventListener('click', myEventHandler);
 myElement.removeEventListener('click', myEventHandler);
@@ -306,7 +315,13 @@ const y = $(myMultipleElements).find('.foo');
 **Modern** (This one is probably not a great example...)
 ```javascript
 const x = myElement.querySelectorAll('.foo');
-const y = Array.from(myMultipleElements).map(x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
+const y = Array.from(myMultipleElements, x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
+```
+
+**New** Using [flat](https://devdocs.io/javascript/global_objects/array/flat)
+```javascript
+const x = myElement.querySelectorAll('.foo');
+const y = Array.from(myMultipleElements, x => Array.from(x.querySelectorAll('.foo'))).flat();
 ```
 
 ---
@@ -320,11 +335,11 @@ $(myMultipleElements).each((i, x) => {
 });
 ```
 
-**Modern**
+**Modern** Using [for..of](https://devdocs.io/javascript/statements/for...of) and [entries](https://devdocs.io/javascript/global_objects/array/entries)
 ```javascript
-Array.from(myMultipleElements).forEach((x, i) => {
-     // use 'x' here
-});
+for (const [i, x] of Array.from(myMultipleElements).entries()) {
+    // use 'x' here
+}
 ```
 
 ---
@@ -338,7 +353,7 @@ const parent = $(myElement).parent();
 
 **Modern**
 ```javascript
-const parent = myElement.parentElement;
+const parent = myElement.parentNode;
 ```
 
 ---
@@ -350,9 +365,9 @@ const parent = myElement.parentElement;
 const x = $(myMultipleElements).parents('.foo');
 ```
 
-**Modern**
+**Modern** Using [closest](https://devdocs.io/dom/element/closest)
 ```javascript
-const parents = Array.from(myMultipleElements).map(x => x.closest('.foo'));
+const parents = Array.from(myMultipleElements, x => x.closest('.foo'));
 ```
 
 ---
@@ -380,7 +395,7 @@ const siblings = $(myElement).siblings();
 
 **Modern**
 ```javascript
-const siblings = Array.from(myElement.parentElement.children).filter(x => x !== myElement);
+const siblings = Array.from(myElement.parentNode.children).filter(x => x !== myElement);
 ```
 
 ---
