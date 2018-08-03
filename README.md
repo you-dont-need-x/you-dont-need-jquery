@@ -61,6 +61,18 @@ fetch('/path/to/json')
 });
 ```
 
+**New** | Using [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+```javascript
+try {
+    const response = await fetch('/path/to/json');
+    const data = await response.json();
+    // use 'data' here
+}
+catch (error) {
+    // use 'error' here
+}
+```
+
 ---
 
 ## AJAX POST
@@ -95,6 +107,22 @@ fetch('path/to/whatever', {
 .catch(error => {
     // use 'error' here
 });
+```
+
+**New** | Using [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+```javascript
+try {
+    const response = await fetch('/path/to/json', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(myObjectHere)
+    });
+    const data = await response.json();
+    // use 'data' here
+}
+catch (error) {
+    // use 'error' here
+}
 ```
 
 ---
