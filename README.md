@@ -256,14 +256,14 @@ $(myElement).prepend(anotherElement);
 $(myElement).remove();
 ```
 
-**Modern** Using [remove](https://devdocs.io/dom/childnode/remove)
+**Modern** | Using [remove](https://devdocs.io/dom/childnode/remove)
 ```javascript
 myElement.appendChild(anotherElement);
 myElement.insertBefore(anotherElement, myElement.firstChild);
 myElement.remove();
 ```
 
-**New** Using [append](https://devdocs.io/dom/parentnode/append) and [prepend](https://devdocs.io/dom/parentnode/prepend) as well
+**New** | Using [append](https://devdocs.io/dom/parentnode/append) and [prepend](https://devdocs.io/dom/parentnode/prepend) as well
 ```javascript
 myElement.append(anotherElement);
 myElement.prepend(anotherElement);
@@ -281,7 +281,7 @@ $(myElement).on('click', myEventHandler);
 $(myElement).off('click', myEventHandler);
 ```
 
-**Modern** Using [addEventListener](https://devdocs.io/dom/eventtarget/addeventlistener) and [removeEventListener](https://devdocs.io/dom/eventtarget/removeeventlistener)
+**Modern** | Using [addEventListener](https://devdocs.io/dom/eventtarget/addeventlistener) and [removeEventListener](https://devdocs.io/dom/eventtarget/removeeventlistener)
 ```javascript
 myElement.addEventListener('click', myEventHandler);
 myElement.removeEventListener('click', myEventHandler);
@@ -312,13 +312,13 @@ const x = $(myElement).find('.foo');
 const y = $(myMultipleElements).find('.foo');
 ```
 
-**Modern** (This one is probably not a great example...)
+**Modern** | (This one is probably not a great example...)
 ```javascript
 const x = myElement.querySelectorAll('.foo');
 const y = Array.from(myMultipleElements, x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
 ```
 
-**New** Using [flat](https://devdocs.io/javascript/global_objects/array/flat)
+**New** | Using [flat](https://devdocs.io/javascript/global_objects/array/flat)
 ```javascript
 const x = myElement.querySelectorAll('.foo');
 const y = Array.from(myMultipleElements, x => Array.from(x.querySelectorAll('.foo'))).flat();
@@ -335,7 +335,14 @@ $(myMultipleElements).each((i, x) => {
 });
 ```
 
-**Modern** Using [for..of](https://devdocs.io/javascript/statements/for...of) and [entries](https://devdocs.io/javascript/global_objects/array/entries)
+**Modern**
+```javascript
+Array.from(myMultipleElements).forEach((x, i) => {
+    // use 'x' here
+});
+```
+
+**New** | Using [for..of](https://devdocs.io/javascript/statements/for...of) and [entries](https://devdocs.io/javascript/global_objects/array/entries)
 ```javascript
 for (const [i, x] of Array.from(myMultipleElements).entries()) {
     // use 'x' here
@@ -353,7 +360,7 @@ const parent = $(myElement).parent();
 
 **Modern**
 ```javascript
-const parent = myElement.parentNode;
+const parent = myElement.parentElement;
 ```
 
 ---
@@ -362,10 +369,10 @@ const parent = myElement.parentNode;
 
 **jQuery**
 ```javascript
-const x = $(myMultipleElements).parents('.foo');
+const parents = $(myMultipleElements).parents('.foo');
 ```
 
-**Modern** Using [closest](https://devdocs.io/dom/element/closest)
+**Modern** | Using [closest](https://devdocs.io/dom/element/closest)
 ```javascript
 const parents = Array.from(myMultipleElements, x => x.closest('.foo'));
 ```
