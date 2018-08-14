@@ -1,6 +1,8 @@
-# It's 2018; Things Have Changed
+# You Don't Need jQuery
 
 "You Don't Need jQuery" is based on [You Might Not Need jQuery](https://github.com/HubSpot/YouMightNotNeedjQuery), but is updated to reflect new APIs, new methodologies, and better, more simplified examples. 
+
+### It's 2018; Things Have Changed
 
 **10+ years after jQuery's initial release, the browser landscape has drastically changed.**
 
@@ -17,8 +19,6 @@ A lot of the new APIs and methodologies are much easier to understand, and are s
 **- YouMightNotNeedjQuery.com**
 
 ---
-
-# You Don't Need jQuery
 
 Most of the APIs that I'll be showing can be [polyfilled](https://en.wikipedia.org/wiki/Polyfill_(programming)), meaning that if the browser is modern, and supports the APIs, it will use those, but if the browser is legacy, it will update the APIs with the new features, and allow all browsers to work.
 
