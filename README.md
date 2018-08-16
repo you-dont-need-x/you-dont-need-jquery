@@ -39,7 +39,7 @@ Although a couple of the modern examples have more characters in their code, the
 **jQuery**
 ```javascript
 $.ajax({
-    url: 'path/to/json',
+    url: '/path/to/json',
     success: data => {
         // use 'data' here
     },
@@ -80,7 +80,7 @@ catch (error) {
 **jQuery**
 ```javascript
 $.ajax({
-    url: 'path/to/whatever',
+    url: '/path/to/whatever',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(myObjectHere),
@@ -95,7 +95,7 @@ $.ajax({
 
 **Modern** | Using the [fetch API](https://devdocs.io/dom/fetch_api/using_fetch) and [Promises](https://devdocs.io/javascript/global_objects/promise)
 ```javascript
-fetch('path/to/whatever', {
+fetch('/path/to/whatever', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(myObjectHere)
@@ -112,7 +112,7 @@ fetch('path/to/whatever', {
 **New** | Using [async/await](https://devdocs.io/javascript/statements/async_function)
 ```javascript
 try {
-    const response = await fetch('/path/to/json', {
+    const response = await fetch('/path/to/whatever', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(myObjectHere)
