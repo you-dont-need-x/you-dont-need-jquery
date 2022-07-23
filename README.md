@@ -289,6 +289,26 @@ myElement.removeEventListener('click', myEventHandler);
 
 ---
 
+## Delegated Events
+
+**jQuery**
+```javascript
+$(myRootElement).on('click', myTargetElements, myEventHandler);
+```
+
+**Modern** | Using [composedPath](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath) and [matches](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches)
+```javascript
+myRootElement.addEventListener('click', (event, ...args) {
+  const matches = event.composedPath()
+    .filter( (el) => el instanceof HTMLElement )
+    .find( (el) => el.matches( myTargetElements ) );
+  if (matches) 
+    eventHandler.call(event.currentTarget, event, matches, ...args);
+});
+```
+
+---
+
 ## Filter Elements
 
 **jQuery**
